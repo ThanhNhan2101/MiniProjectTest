@@ -1,0 +1,99 @@
+# Version Control
+.git/
+.github/
+.gitignore
+.gitlab-ci.yml
+
+# Python Virtual Environments
+venv/
+env/
+.venv/
+ENV/
+
+# Python Cache & Compiled
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Testing
+tests/
+test/
+pytest.ini
+.coverage
+.tox/
+htmlcov/
+*.cover
+.hypothesis/
+test_*.py
+*_test.py
+
+# Development Tools
+.qodo/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation
+README*
+*.md
+LICENSE
+docs/
+REFACTORING_SUMMARY.md
+REPORT_BUILDER_DOCS.md
+REPORT_GENERATION_PATTERNS.md
+
+# Docker Compose (không dùng trong build)
+docker-compose*.yaml
+docker-compose*.yml
+
+# Environment Files
+.env
+.env.*
+!.env.example
+.envrc
+
+# Logs
+logs/
+*.log
+
+# Database
+*.sqlite3
+*.db
+db.sqlite3-journal
+
+# Static/Media (sẽ được collect lại)
+staticfiles/
+mediafiles/
+
+# Scripts không cần trong production
+scripts/
+fix_imports.py
+fix_external_imports.py
+
+# Development Dependencies
+# requirements-dev.txt  # COMMENTED: needed for development stage
+Pipfile
+Pipfile.lock
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*.orig
