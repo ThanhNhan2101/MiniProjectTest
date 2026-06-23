@@ -2,6 +2,8 @@
 Django==5.2
 django-environ==0.12.0
 djangorestframework
+gunicorn==23.0.0
+whitenoise==6.9.0
 
 # # Document
 # drf-yasg==1.21
