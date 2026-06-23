@@ -37,15 +37,11 @@ INSTALLED_APPS = [
 ]
 
 THIRTY_APPS = [
-    'axes',
     'rest_framework',
-    'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',
-    'drf_yasg',
 ]
 
 LOCAL_APPS = [ 
-
+    'core.order',
 ]
 
 
