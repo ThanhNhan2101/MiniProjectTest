@@ -130,6 +130,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 REDIS_URL = env('REDIS_URL', default='redis://localhost:6379/0')
+REDIS_ORDER_STREAM = env('REDIS_ORDER_STREAM', default='orders-stream')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
