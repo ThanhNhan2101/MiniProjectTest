@@ -6,7 +6,7 @@ Create the local environment file, update its secrets, then start the stack:
 
 ```bash
 cp .env.example .env
-docker compose up --build
+docker compose up -d --build
 ```
 
 The services are available at:
@@ -35,6 +35,20 @@ docker compose exec backend python manage.py produce_orders \
 
 The command creates a `LoadTestRun`, publishes the events to
 `REDIS_ORDER_STREAM`, and prints the run ID that workers will process.
+
+Consume events from Redis Streams and write orders to PostgreSQL:
+
+```bash
+docker compose exec backend python manage.py consume_orders \
+  --stream orders-stream \
+  --group order-workers \
+  --consumer worker-1 \
+  --count 100 \
+  --block-ms 5000
+```
+
+The worker uses `XREADGROUP`, writes each event in a database transaction,
+then calls `XACK` only after the database work succeeds.
 
 To also remove PostgreSQL and Redis data:
 
