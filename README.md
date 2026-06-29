@@ -50,6 +50,17 @@ docker compose exec backend python manage.py consume_orders \
 The worker uses `XREADGROUP`, writes each event in a database transaction,
 then calls `XACK` only after the database work succeeds.
 
+View processing stats:
+
+```bash
+curl http://localhost:8000/api/orders/stats/
+curl "http://localhost:8000/api/orders/stats/?run_id=<run-id>"
+```
+
+The response combines PostgreSQL counters with Redis Stream metadata, including
+stream length, consumer group state, pending messages, processed events, and
+remaining events.
+
 To also remove PostgreSQL and Redis data:
 
 ```bash
