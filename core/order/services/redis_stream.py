@@ -9,8 +9,8 @@ def get_redis_client() -> Redis:
     return Redis.from_url(
         settings.REDIS_URL,
         decode_responses=True,
-        socket_connect_timeout=5,
-        socket_timeout=5,
+        socket_connect_timeout=10,
+        socket_timeout=30,
         health_check_interval=30,
     )
 

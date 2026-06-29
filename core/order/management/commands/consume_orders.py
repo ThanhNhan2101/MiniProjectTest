@@ -23,7 +23,7 @@ class Command(BaseCommand):
         parser.add_argument("--group", default="order-workers")
         parser.add_argument("--consumer", default=socket.gethostname())
         parser.add_argument("--count", type=int, default=100)
-        parser.add_argument("--block-ms", type=int, default=5000)
+        parser.add_argument("--block-ms", type=int, default=2000)
         parser.add_argument("--max-messages", type=int, default=0)
 
     def handle(self, *args, **options):
@@ -121,4 +121,5 @@ class Command(BaseCommand):
         finally:
             client.close()
 
-        self.stdout.write(self.style.SUCCESS(f"Processed {processed} event(s)."))
+        self.stdout.write(self.style.SUCCESS(
+            f"Processed {processed} event(s)."))
